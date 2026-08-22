@@ -113,7 +113,7 @@ export const Footer: React.FC = () => {
         {/* Disclaimer & Copyright */}
         <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-stone-500 text-center md:text-left">
           <p>
-            © {currentYear} DigiCraft.store — Tous droits réservés. Produit numérique à téléchargement immédiat.
+            © {currentYear} AllDigiCraft — Tous droits réservés. Produit numérique à téléchargement immédiat.
           </p>
           <p className="flex items-center gap-1">
             Fait avec <Heart className="w-3.5 h-3.5 text-rose-500 fill-rose-500" /> pour tous les parents et leurs enfants.

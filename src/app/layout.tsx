@@ -16,25 +16,25 @@ const sansFont = Inter({
 });
 
 export const metadata: Metadata = {
-  title: `${siteConfig.title} - DigiCraft.store`,
+  title: `${siteConfig.title} - AllDigiCraft`,
   description: siteConfig.description,
   keywords: siteConfig.keywords,
   authors: [{ name: "DigiCraft Editions" }],
-  creator: "DigiCraft.store",
+  creator: "AllDigiCraft",
   publisher: "DigiCraft",
   openGraph: {
     type: "website",
     locale: "fr_FR",
-    url: "https://digicraft.store",
+    url: "https://AllDigiCraft",
     title: siteConfig.title,
     description: siteConfig.description,
-    siteName: "DigiCraft.store",
+    siteName: "AllDigiCraft",
     images: [
       {
         url: "/assets/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Guide PDF Mon Enfant Pleure à l'École — DigiCraft.store",
+        alt: "Guide PDF Mon Enfant Pleure à l'École — AllDigiCraft",
       },
     ],
   },
@@ -59,16 +59,16 @@ export default function RootLayout({
     "@type": "Product",
     name: siteConfig.title,
     description: siteConfig.description,
-    image: "https://digicraft.store/assets/ebook-cover.png",
+    image: "https://AllDigiCraft/assets/ebook-cover.png",
     offers: {
       "@type": "Offer",
       price: siteConfig.pricing.amount.toFixed(2),
       priceCurrency: siteConfig.pricing.currency,
       availability: "https://schema.org/InStock",
-      url: "https://digicraft.store#commander",
+      url: "https://AllDigiCraft#commander",
       seller: {
         "@type": "Organization",
-        name: "DigiCraft.store",
+        name: "AllDigiCraft",
       },
     },
     aggregateRating: {

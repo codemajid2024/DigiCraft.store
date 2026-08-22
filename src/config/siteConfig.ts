@@ -325,5 +325,5 @@ export const siteConfig = {
   ] as FaqItem[],
 
   // Contact / Support
-  supportEmail: "contact@digicraft.store",
+  supportEmail: "contact@alldigicraft.fr",
 };

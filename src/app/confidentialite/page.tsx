@@ -6,7 +6,7 @@ import { Footer } from "@/components/layout/Footer";
 import { siteConfig } from "@/config/siteConfig";
 
 export const metadata = {
-  title: "Politique de Confidentialité - DigiCraft.store",
+  title: "Politique de Confidentialité - AllDigiCraft",
   description: "Politique de protection des données personnelles et respect de la vie privée.",
 };
 

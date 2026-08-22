@@ -6,7 +6,7 @@ import { Footer } from "@/components/layout/Footer";
 import { siteConfig } from "@/config/siteConfig";
 
 export const metadata = {
-  title: "Conditions Générales de Vente (CGV) - DigiCraft.store",
+  title: "Conditions Générales de Vente (CGV) - AllDigiCraft",
   description: "Conditions Générales de Vente pour le guide numérique et ebook PDF DigiCraft.",
 };
 
@@ -42,7 +42,7 @@ export default function CGVPage() {
                 1. Objet et champ d&apos;application
               </h2>
               <p>
-                Les présentes Conditions Générales de Vente régissent l&apos;ensemble des ventes conclues sur le site <strong>DigiCraft.store</strong> concernant l&apos;achat du guide numérique au format PDF : <em>« Mon enfant pleure à l&apos;école »</em> et ses bonus associés.
+                Les présentes Conditions Générales de Vente régissent l&apos;ensemble des ventes conclues sur le site <strong>AllDigiCraft</strong> concernant l&apos;achat du guide numérique au format PDF : <em>« Mon enfant pleure à l&apos;école »</em> et ses bonus associés.
               </p>
             </section>
 

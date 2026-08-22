@@ -6,8 +6,8 @@ import { Footer } from "@/components/layout/Footer";
 import { siteConfig } from "@/config/siteConfig";
 
 export const metadata = {
-  title: "Mentions Légales - DigiCraft.store",
-  description: "Mentions légales de DigiCraft.store.",
+  title: "Mentions Légales - AllDigiCraft",
+  description: "Mentions légales de AllDigiCraft.",
 };
 
 export default function MentionsLegalesPage() {
@@ -32,7 +32,7 @@ export default function MentionsLegalesPage() {
               Mentions Légales
             </h1>
             <p className="text-xs text-stone-500">
-              Édition du site DigiCraft.store
+              Édition du site AllDigiCraft
             </p>
           </div>
 
@@ -42,7 +42,7 @@ export default function MentionsLegalesPage() {
                 1. Éditeur du site
               </h2>
               <p>
-                Le site <strong>DigiCraft.store</strong> est édité par l&apos;équipe DigiCraft Editions, spécialisée dans la publication de contenus éducatifs et d&apos;outils d&apos;accompagnement à la parentalité.
+                Le site <strong>AllDigiCraft</strong> est édité par l&apos;équipe DigiCraft Editions, spécialisée dans la publication de contenus éducatifs et d&apos;outils d&apos;accompagnement à la parentalité.
               </p>
               <p>
                 Contact email : <strong>{siteConfig.supportEmail}</strong>
