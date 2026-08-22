@@ -42,7 +42,7 @@ export const Header: React.FC = () => {
             </div>
             <div>
               <span className="font-display font-black text-lg sm:text-xl text-stone-900 tracking-tight block leading-tight">
-                DigiCraft<span className="text-amber-500">.store</span>
+                <span className="text-amber-500">All</span>DigiCraft
               </span>
               <span className="text-[11px] font-medium text-stone-500 block leading-tight">
                 Guide Rentrée Maternelle 💛

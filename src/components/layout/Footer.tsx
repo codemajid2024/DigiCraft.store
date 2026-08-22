@@ -19,7 +19,7 @@ export const Footer: React.FC = () => {
                 <HeartHandshake className="w-5 h-5" />
               </div>
               <span className="font-display font-black text-xl text-white tracking-tight">
-                DigiCraft<span className="text-amber-400">.store</span>
+              <span className="text-amber-400">All</span>DigiCraft
               </span>
             </div>
             <p className="text-sm text-stone-400 max-w-md leading-relaxed">

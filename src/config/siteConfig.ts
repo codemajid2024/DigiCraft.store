@@ -32,7 +32,7 @@ export interface Chapter {
 }
 
 export const siteConfig = {
-  name: "DigiCraft",
+  name: "AllDigiCraft",
   title: "Guide PDF Rentrée Maternelle | Gérer Pleurs et Angoisse de Séparation",
   subtitle: "Comprendre et apaiser l'angoisse de séparation, du premier jour aux semaines qui suivent",
   hook: "Mon enfant pleure à l'école 💛",
