@@ -1,0 +1,229 @@
+"use client";
+
+import React from "react";
+import Image from "next/image";
+import {
+  Sparkles,
+  CheckCircle2,
+  Download,
+  Lock,
+  ShieldAlert,
+  Zap,
+  Gift,
+  FileCheck,
+  HeartHandshake,
+  Star,
+  Mail,
+} from "lucide-react";
+import { siteConfig } from "@/config/siteConfig";
+import { PayPalButtonWrapper } from "@/components/checkout/PayPalButtonWrapper";
+import { GuaranteeBadge } from "@/components/checkout/GuaranteeBadge";
+
+export const PricingSection: React.FC = () => {
+  return (
+    <section
+      id="commander"
+      className="py-20 bg-gradient-to-b from-amber-50/50 via-warmth-50/40 to-amber-100/40 relative scroll-mt-16"
+    >
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
+        <div className="text-center max-w-3xl mx-auto space-y-3 mb-12">
+          <div className="inline-flex items-center gap-1.5 bg-amber-500 text-white text-xs font-black uppercase tracking-wider px-3.5 py-1 rounded-full shadow-sm">
+            <Zap className="w-3.5 h-3.5 text-yellow-200 fill-yellow-200" />
+            Accès Immédiat & Téléchargement Sécurisé
+          </div>
+          <h2 className="font-display text-3xl sm:text-4xl font-black text-stone-900 tracking-tight">
+            Offrez-vous des matins sereins dès demain
+          </h2>
+          <p className="text-stone-600 text-base sm:text-lg">
+            Téléchargez le guide complet de 29 pages ainsi que tous les bonus imprimables en quelques secondes.
+          </p>
+        </div>
+
+        {/* Pricing & Checkout Box Card */}
+        <div className="bg-white rounded-3xl border-2 border-amber-300 shadow-2xl overflow-hidden relative">
+          {/* Top highlight ribbon */}
+          <div className="bg-gradient-to-r from-amber-500 via-amber-600 to-warmth-500 text-white text-center py-2.5 px-4 font-bold text-xs sm:text-sm tracking-wide uppercase flex items-center justify-center gap-2">
+            <Sparkles className="w-4 h-4 text-yellow-200" />
+            <span>Offre Spéciale Rentrée • Téléchargement Direct Après Paiement</span>
+          </div>
+
+          <div className="p-6 sm:p-10 lg:p-12">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+              {/* Left col: What you get */}
+              <div className="lg:col-span-6 space-y-6">
+                <div className="space-y-2">
+                  <span className="text-xs font-bold text-amber-700 uppercase tracking-wider bg-amber-100/70 px-2.5 py-1 rounded-md">
+                    Pack Complet Rentrée Maternelle
+                  </span>
+                  <h3 className="font-display font-black text-2xl sm:text-3xl text-stone-900 leading-tight">
+                    Guide PDF + Bonus Imprimables
+                  </h3>
+                  <p className="text-stone-600 text-sm leading-relaxed">
+                    Tout le nécessaire pour comprendre, apaiser et surmonter l&apos;angoisse de séparation en toute bienveillance.
+                  </p>
+                </div>
+
+                {/* Pack Visual Banner */}
+                <div className="relative w-full h-56 sm:h-64 rounded-2xl overflow-hidden shadow-md border border-amber-200 bg-amber-50">
+                  <Image
+                    src="/assets/mockup-ipad.jpg"
+                    alt="Aperçu du pack complet : Guide Ebook + Check-list Rentrée"
+                    fill
+                    className="object-cover object-top"
+                  />
+                  <div className="absolute bottom-2 right-2 bg-black/70 backdrop-blur-md text-white text-[10px] font-bold px-2.5 py-1 rounded-full flex items-center gap-1">
+                    <Sparkles className="w-3 h-3 text-yellow-300" />
+                    Pack Numérique Immédiat
+                  </div>
+                </div>
+
+                {/* Price Display */}
+                <div className="p-4 rounded-2xl bg-amber-50/80 border border-amber-200/80 flex items-baseline gap-3">
+                  <div className="font-display font-black text-4xl sm:text-5xl text-stone-900 tracking-tight">
+                    {siteConfig.pricing.amountStr} {siteConfig.pricing.currencySymbol}
+                  </div>
+                  <div className="space-y-0.5">
+                    <span className="text-sm font-bold text-stone-400 line-through block">
+                      {siteConfig.pricing.originalPrice} €
+                    </span>
+                    <span className="text-xs font-extrabold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded-full inline-block">
+                      {siteConfig.pricing.discountBadge}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Inclusions List */}
+                <div className="space-y-3">
+                  <div className="text-xs font-bold text-stone-900 uppercase tracking-wider">
+                    Ce que vous allez recevoir immédiatement :
+                  </div>
+                  <ul className="space-y-2.5 text-sm text-stone-700">
+                    <li className="flex items-start gap-2.5">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                      <span>
+                        <strong>Ebook PDF de 29 pages</strong> illustré et mis en couleur
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-2.5">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                      <span>
+                        <strong>Check-list « Rentrée Sereine »</strong> prête à imprimer pour le frigo
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-2.5">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                      <span>
+                        <strong>Modèle de petit mot doux</strong> pour le sac ou le doudou
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-2.5">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                      <span>
+                        Lecture universelle (iPhone, Android, iPad, Mac, PC, Liseuse)
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-2.5">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                      <span>Accès à vie et téléchargement immédiat</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              {/* Right col: PayPal Button and checkout area */}
+              <div className="lg:col-span-6 space-y-6">
+                <div className="p-6 rounded-2xl bg-stone-50 border border-stone-200/80 shadow-inner space-y-4">
+                  <div className="text-center space-y-1">
+                    <div className="text-xs font-bold text-stone-500 uppercase tracking-wider">
+                      Finaliser votre commande
+                    </div>
+                    <div className="text-lg font-black text-stone-900 font-display">
+                      Montant total : {siteConfig.pricing.amountStr} € TTC
+                    </div>
+                  </div>
+
+                  {/* PayPal Interactive Component */}
+                  <PayPalButtonWrapper
+                    amount={siteConfig.pricing.amount}
+                    currency={siteConfig.pricing.currency}
+                  />
+                </div>
+
+                {/* Digital Product & Refund Disclaimer */}
+                <div className="p-4 rounded-xl bg-amber-50/70 border border-amber-200/80 text-[11px] text-stone-600 space-y-1.5">
+                  <div className="flex items-center gap-1.5 font-bold text-stone-800">
+                    <ShieldAlert className="w-4 h-4 text-amber-600 shrink-0" />
+                    <span>Information importante sur votre commande</span>
+                  </div>
+                  <p className="leading-relaxed">
+                    ⚠️ <strong>Produit 100% numérique (PDF)</strong> : Aucun article physique ne sera expédié par la poste.
+                    En raison de la nature numérique et de l&apos;accès immédiat au fichier après achat, aucun remboursement
+                    ne sera possible une fois le téléchargement délivré.
+                  </p>
+                </div>
+
+                {/* High-converting Trust & Social Proof Card (Fills the right column) */}
+                <div className="p-5 rounded-2xl bg-gradient-to-br from-stone-900 via-stone-850 to-stone-900 text-white shadow-xl space-y-4 border border-stone-800">
+                  {/* Rating Header */}
+                  <div className="flex items-center justify-between pb-3 border-b border-stone-800">
+                    <div className="flex items-center gap-1">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
+                      ))}
+                      <span className="text-xs font-bold text-amber-300 ml-1.5">4.9/5 sur +1 420 parents</span>
+                    </div>
+                    <span className="text-[10px] font-semibold text-emerald-400 bg-emerald-950/80 px-2 py-0.5 rounded-full border border-emerald-800/50">
+                      Achat Vérifié
+                    </span>
+                  </div>
+
+                  {/* Customer Review Quote */}
+                  <div className="space-y-2">
+                    <p className="text-xs italic text-stone-300 leading-relaxed">
+                      &laquo; Après 2 semaines de pleurs chaque matin devant la classe, le rituel du mot doux et la méthode expliquée dans le guide ont tout changé en 3 jours seulement ! &raquo;
+                    </p>
+                    <div className="flex items-center gap-2 text-[11px]">
+                      <div className="w-6 h-6 rounded-full bg-amber-500 text-stone-950 font-black text-[10px] flex items-center justify-center">
+                        ÉM
+                      </div>
+                      <div>
+                        <span className="font-bold text-stone-200">Élodie M.</span>
+                        <span className="text-stone-400 text-[10px]"> — Maman d&apos;Arthur, 3 ans</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Fast Reassurance Checklist */}
+                  <div className="pt-3 border-t border-stone-800/80 grid grid-cols-2 gap-2 text-[11px]">
+                    <div className="flex items-center gap-1.5 text-stone-300">
+                      <Download className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+                      <span>Accès instantané 24h/7</span>
+                    </div>
+                    <div className="flex items-center gap-1.5 text-stone-300">
+                      <Lock className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+                      <span>Cryptage SSL 256-bit</span>
+                    </div>
+                    <div className="flex items-center gap-1.5 text-stone-300">
+                      <Mail className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+                      <span>Support 7j/7 dédié</span>
+                    </div>
+                    <div className="flex items-center gap-1.5 text-stone-300">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+                      <span>Fichier PDF universel</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Bottom trust badges */}
+            <div className="mt-8 pt-6 border-t border-stone-200/70">
+              <GuaranteeBadge />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};

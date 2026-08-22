@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 45 40% 98%;
+    --foreground: 24 20% 15%;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: #fdfbf7;
+    color: #292524;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+}
+
+/* Custom 3D Book CSS Effect */
+.book-container {
+  perspective: 1200px;
+}
+
+.book-3d {
+  transform-style: preserve-3d;
+  transform: rotateY(-18deg) rotateX(4deg);
+  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.5s ease;
+  box-shadow: -15px 25px 50px -10px rgba(180, 83, 9, 0.25), 
+              -5px 10px 20px -5px rgba(0, 0, 0, 0.1);
+}
+
+.book-3d:hover {
+  transform: rotateY(-8deg) rotateX(2deg) translateY(-8px);
+  box-shadow: -20px 35px 60px -10px rgba(180, 83, 9, 0.35), 
+              -8px 15px 25px -5px rgba(0, 0, 0, 0.15);
+}
+
+.book-spine {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 14px;
+  background: linear-gradient(90deg, rgba(217, 119, 6, 0.8) 0%, rgba(245, 158, 11, 0.2) 100%);
+  border-radius: 4px 0 0 4px;
+  box-shadow: inset -2px 0 4px rgba(0, 0, 0, 0.15);
+}
+
+.book-pages {
+  position: absolute;
+  right: -8px;
+  top: 6px;
+  bottom: 6px;
+  width: 10px;
+  background: repeating-linear-gradient(
+    to bottom,
+    #fcfbf9,
+    #fcfbf9 2px,
+    #e7e5e4 2px,
+    #e7e5e4 3px
+  );
+  border-radius: 0 4px 4px 0;
+  box-shadow: 2px 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Glassmorphism helpers */
+.glass-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(245, 158, 11, 0.15);
+}
+
+.glass-card-dark {
+  background: rgba(254, 243, 199, 0.5);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(245, 158, 11, 0.25);
+}
+
+/* Subtle glowing pulse */
+.glow-amber {
+  box-shadow: 0 0 25px rgba(245, 158, 11, 0.35);
+}
+
+/* Shimmer animation on CTA */
+.btn-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-shimmer::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    60deg,
+    rgba(255, 255, 255, 0) 20%,
+    rgba(255, 255, 255, 0.35) 50%,
+    rgba(255, 255, 255, 0) 80%
+  );
+  transform: rotate(30deg);
+  animation: shimmerEffect 4s infinite;
+}
+
+@keyframes shimmerEffect {
+  0% {
+    transform: translateX(-100%) rotate(30deg);
+  }
+  20%, 100% {
+    transform: translateX(100%) rotate(30deg);
+  }
+}
