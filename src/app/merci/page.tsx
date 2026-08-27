@@ -105,8 +105,12 @@ function MerciContent() {
           Merci {payerName} pour votre confiance ! 💛
         </h1>
         <p className="text-stone-600 text-base max-w-xl mx-auto leading-relaxed">
-          Votre commande a bien été validée. Vos fichiers PDF sont prêts et disponibles ci-dessous en téléchargement direct et sécurisé.
+          Votre commande a bien été validée. Vos fichiers PDF sont prêts et disponibles ci-dessous en téléchargement direct.
         </p>
+        <div className="inline-flex items-center gap-2 bg-amber-50 text-amber-900 border border-amber-200/80 text-xs px-4 py-2 rounded-xl">
+          <Mail className="w-4 h-4 text-amber-600 shrink-0" />
+          <span>Un e-mail de confirmation avec votre lien de sauvegarde permanent vous a également été envoyé.</span>
+        </div>
       </div>
 
       {/* Main Download Card */}

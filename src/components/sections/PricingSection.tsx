@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import {
   Sparkles,
@@ -20,6 +20,10 @@ import { PayPalButtonWrapper } from "@/components/checkout/PayPalButtonWrapper";
 import { GuaranteeBadge } from "@/components/checkout/GuaranteeBadge";
 
 export const PricingSection: React.FC = () => {
+  const [acceptedCGV, setAcceptedCGV] = useState(false);
+  const [acceptedRetractation, setAcceptedRetractation] = useState(false);
+  const bothAccepted = acceptedCGV && acceptedRetractation;
+
   return (
     <section
       id="commander"
@@ -125,7 +129,13 @@ export const PricingSection: React.FC = () => {
                     </li>
                     <li className="flex items-start gap-2.5">
                       <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                      <span>Accès à vie et téléchargement immédiat</span>
+                      <span>
+                        <strong>Téléchargement immédiat</strong> + Envoi automatique d&apos;une copie par e-mail
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-2.5">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                      <span>Accès permanent à vie</span>
                     </li>
                   </ul>
                 </div>
@@ -143,11 +153,79 @@ export const PricingSection: React.FC = () => {
                     </div>
                   </div>
 
-                  {/* PayPal Interactive Component */}
-                  <PayPalButtonWrapper
-                    amount={siteConfig.pricing.amount}
-                    currency={siteConfig.pricing.currency}
-                  />
+                  {/* Legal Checkboxes — obligatoires avant paiement */}
+                  <div className="space-y-3 pt-1 pb-2">
+                    {/* Case 1 : CGV + Confidentialité */}
+                    <label
+                      htmlFor="accept-cgv"
+                      className={`flex items-start gap-3 p-3 rounded-xl border cursor-pointer transition-all ${
+                        acceptedCGV
+                          ? "bg-emerald-50 border-emerald-300"
+                          : "bg-white border-stone-200 hover:border-amber-300"
+                      }`}
+                    >
+                      <input
+                        id="accept-cgv"
+                        type="checkbox"
+                        checked={acceptedCGV}
+                        onChange={(e) => setAcceptedCGV(e.target.checked)}
+                        className="mt-0.5 h-4 w-4 shrink-0 accent-amber-500 cursor-pointer"
+                      />
+                      <span className="text-[11px] text-stone-700 leading-relaxed">
+                        J&apos;accepte les{" "}
+                        <a href="/cgv" target="_blank" className="text-amber-600 font-semibold underline hover:text-amber-700">
+                          Conditions Générales de Vente
+                        </a>{" "}et la{" "}
+                        <a href="/confidentialite" target="_blank" className="text-amber-600 font-semibold underline hover:text-amber-700">
+                          Politique de Confidentialité
+                        </a>.
+                      </span>
+                    </label>
+
+                    {/* Case 2 : Renonciation au droit de rétractation */}
+                    <label
+                      htmlFor="accept-retractation"
+                      className={`flex items-start gap-3 p-3 rounded-xl border cursor-pointer transition-all ${
+                        acceptedRetractation
+                          ? "bg-emerald-50 border-emerald-300"
+                          : "bg-white border-stone-200 hover:border-amber-300"
+                      }`}
+                    >
+                      <input
+                        id="accept-retractation"
+                        type="checkbox"
+                        checked={acceptedRetractation}
+                        onChange={(e) => setAcceptedRetractation(e.target.checked)}
+                        className="mt-0.5 h-4 w-4 shrink-0 accent-amber-500 cursor-pointer"
+                      />
+                      <span className="text-[11px] text-stone-700 leading-relaxed">
+                        J&apos;accepte le démarrage <strong>immédiat</strong> de la fourniture du contenu numérique et je{" "}
+                        <strong>renonce expressément</strong> à mon droit de rétractation de 14 jours{" "}
+                        (art. L221-28 Code de la consommation). Aucun remboursement ne sera possible
+                        après accès au fichier.
+                      </span>
+                    </label>
+
+                    {/* Message d'alerte si cases non cochées */}
+                    {!bothAccepted && (
+                      <p className="text-[10px] text-amber-700 bg-amber-50 border border-amber-200 rounded-lg px-3 py-2 text-center font-medium">
+                        ☝️ Veuillez cocher les deux cases ci-dessus pour finaliser votre commande.
+                      </p>
+                    )}
+                  </div>
+
+                  {/* PayPal Interactive Component — bloqué si cases non cochées */}
+                  <div className={`relative transition-all duration-300 ${
+                    !bothAccepted ? "opacity-40 pointer-events-none select-none" : ""
+                  }`}>
+                    <PayPalButtonWrapper
+                      amount={siteConfig.pricing.amount}
+                      currency={siteConfig.pricing.currency}
+                    />
+                    {!bothAccepted && (
+                      <div className="absolute inset-0 rounded-xl cursor-not-allowed" />
+                    )}
+                  </div>
                 </div>
 
                 {/* Digital Product & Refund Disclaimer */}

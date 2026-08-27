@@ -16,7 +16,7 @@ interface PayPalButtonWrapperProps {
 const PayPalButtonsInner: React.FC<{
   amount: number;
   currency: string;
-  onSuccess: (orderId: string, payerName?: string) => void;
+  onSuccess: (orderId: string, payerName?: string, payerEmail?: string) => void;
   onScriptError: () => void;
 }> = ({ amount, currency, onSuccess, onScriptError }) => {
   const [{ isPending, isRejected }] = usePayPalScriptReducer();
@@ -78,7 +78,8 @@ const PayPalButtonsInner: React.FC<{
           try {
             const order = await actions.order.capture();
             const payerName = order.payer?.name?.given_name || "Parent";
-            onSuccess(order.id ?? `PP-${Date.now()}`, payerName);
+            const payerEmail = order.payer?.email_address || "";
+            onSuccess(order.id ?? `PP-${Date.now()}`, payerName, payerEmail);
           } catch (err) {
             console.error("PayPal Capture Error:", err);
           }
@@ -110,8 +111,34 @@ export const PayPalButtonWrapper: React.FC<PayPalButtonWrapperProps> = ({
     clientId === "sb" ||
     clientId.includes("VOTRE_PAYPAL_CLIENT_ID");
 
-  const handleSuccessfulPayment = (orderId: string, payerName = "Parent") => {
+  const sendDeliveryEmail = async (orderId: string, payerName: string, payerEmail: string) => {
+    try {
+      if (payerEmail) {
+        await fetch("/api/send-email", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            buyerEmail: payerEmail,
+            buyerName: payerName,
+            orderId,
+            amount: amount.toFixed(2),
+          }),
+        });
+      }
+    } catch (err) {
+      console.error("Erreur envoi email automatique:", err);
+    }
+  };
+
+  const handleSuccessfulPayment = (
+    orderId: string,
+    payerName = "Parent",
+    payerEmail = "parent@exemple.com"
+  ) => {
     setIsProcessing(true);
+    // Envoi de l'email en tâche d'arrière-plan sans bloquer la redirection
+    sendDeliveryEmail(orderId, payerName, payerEmail);
+
     setTimeout(() => {
       router.push(
         `/merci?orderId=${encodeURIComponent(orderId)}&payer=${encodeURIComponent(
@@ -125,7 +152,7 @@ export const PayPalButtonWrapper: React.FC<PayPalButtonWrapperProps> = ({
     setIsProcessing(true);
     const mockOrderId = `MOCK-PP-${Date.now().toString(36).toUpperCase()}`;
     setTimeout(() => {
-      handleSuccessfulPayment(mockOrderId, "Parent Test");
+      handleSuccessfulPayment(mockOrderId, "Parent Test", "parent.demo@alldigicraft.fr");
     }, 1200);
   };
 
