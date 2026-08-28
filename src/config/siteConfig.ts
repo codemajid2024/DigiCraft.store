@@ -41,8 +41,8 @@ export const siteConfig = {
   
   // Pricing
   pricing: {
-    amount: 7.90,
-    amountStr: "7,90",
+    amount: 10.90,
+    amountStr: "10,90",
     currency: "EUR",
     currencySymbol: "€",
     originalPrice: "19,90",
