@@ -96,6 +96,7 @@ export default function RootLayout({
   return (
     <html lang="fr" className={`${displayFont.variable} ${sansFont.variable}`}>
       <head>
+        <meta name="facebook-domain-verification" content="txwsg1pjf3vcn37xqbk9ozcze6kite" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdProduct) }}
