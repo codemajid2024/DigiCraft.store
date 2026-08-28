@@ -43,6 +43,16 @@ function MerciContent() {
     } catch (e) {
       console.log("Confetti effect skipped");
     }
+
+    // Facebook Pixel — Purchase event
+    if (typeof window !== "undefined" && (window as any).fbq) {
+      (window as any).fbq("track", "Purchase", {
+        value: 10.90,
+        currency: "EUR",
+        content_name: "Guide PDF Mon Enfant Pleure à l'École",
+        content_type: "product",
+      });
+    }
   }, []);
 
   const handleSecureDownload = async (
