@@ -241,35 +241,27 @@ export const PricingSection: React.FC = () => {
                   </p>
                 </div>
 
-                {/* High-converting Trust & Social Proof Card (Fills the right column) */}
+                {/* High-converting Value & Reassurance Card (100% Légal & Conforme) */}
                 <div className="p-5 rounded-2xl bg-gradient-to-br from-stone-900 via-stone-850 to-stone-900 text-white shadow-xl space-y-4 border border-stone-800">
-                  {/* Rating Header */}
+                  {/* Card Header */}
                   <div className="flex items-center justify-between pb-3 border-b border-stone-800">
-                    <div className="flex items-center gap-1">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
-                      ))}
-                      <span className="text-xs font-bold text-amber-300 ml-1.5">4.9/5 sur +1 420 parents</span>
+                    <div className="flex items-center gap-2">
+                      <Sparkles className="w-4 h-4 text-amber-400" />
+                      <span className="text-xs font-bold text-amber-300">Votre Pack Sérénité Immédiat</span>
                     </div>
-                    <span className="text-[10px] font-semibold text-emerald-400 bg-emerald-950/80 px-2 py-0.5 rounded-full border border-emerald-800/50">
-                      Achat Vérifié
+                    <span className="text-[10px] font-semibold text-emerald-400 bg-emerald-950/80 px-2.5 py-0.5 rounded-full border border-emerald-800/50">
+                      Accès 24h/7
                     </span>
                   </div>
 
-                  {/* Customer Review Quote */}
+                  {/* Value Highlights */}
                   <div className="space-y-2">
-                    <p className="text-xs italic text-stone-300 leading-relaxed">
-                      &laquo; Après 2 semaines de pleurs chaque matin devant la classe, le rituel du mot doux et la méthode expliquée dans le guide ont tout changé en 3 jours seulement ! &raquo;
+                    <p className="text-xs text-stone-200 leading-relaxed font-medium">
+                      💡 <strong>Pourquoi investir 19,90 € aujourd&apos;hui ?</strong>
                     </p>
-                    <div className="flex items-center gap-2 text-[11px]">
-                      <div className="w-6 h-6 rounded-full bg-amber-500 text-stone-950 font-black text-[10px] flex items-center justify-center">
-                        ÉM
-                      </div>
-                      <div>
-                        <span className="font-bold text-stone-200">Élodie M.</span>
-                        <span className="text-stone-400 text-[10px]"> — Maman d&apos;Arthur, 3 ans</span>
-                      </div>
-                    </div>
+                    <p className="text-xs text-stone-300 leading-relaxed">
+                      Pour remplacer des semaines de pleurs, de doutes et de culpabilité au moment de la séparation par un rituel rassurant et apaisé dès demain matin.
+                    </p>
                   </div>
 
                   {/* Fast Reassurance Checklist */}

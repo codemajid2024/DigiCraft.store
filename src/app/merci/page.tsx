@@ -47,8 +47,8 @@ function MerciContent() {
     // Facebook Pixel — Purchase event
     if (typeof window !== "undefined" && (window as any).fbq) {
       (window as any).fbq("track", "Purchase", {
-        value: 10.90,
-        currency: "EUR",
+        value: siteConfig.pricing.amount,
+        currency: siteConfig.pricing.currency,
         content_name: "Guide PDF Mon Enfant Pleure à l'École",
         content_type: "product",
       });

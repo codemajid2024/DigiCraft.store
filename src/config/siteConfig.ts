@@ -1,13 +1,10 @@
-export interface Testimonial {
+export interface ParentArgument {
   id: string;
-  name: string;
-  role: string;
-  avatar: string;
-  rating: number;
-  date: string;
-  comment: string;
-  badge: string;
-  highlight: string;
+  icon: string;
+  title: string;
+  subtitle: string;
+  description: string;
+  tag: string;
 }
 
 export interface Benefit {
@@ -41,22 +38,22 @@ export const siteConfig = {
   
   // Pricing
   pricing: {
-    amount: 10.90,
-    amountStr: "10,90",
+    amount: 19.90,
+    amountStr: "19,90",
     currency: "EUR",
     currencySymbol: "€",
-    originalPrice: "19,90",
-    discountBadge: "-60% AUJOURD'HUI",
+    originalPrice: "39,90",
+    discountBadge: "-50% PACK COMPLET",
     guaranteeText: "Format PDF numérique sécurisé • Téléchargement immédiat",
   },
 
-  // Author / Trust info
+  // Author / Trust info (100% conformes et légaux)
   trust: {
     pageCount: 29,
-    ratingScore: "4.9/5",
-    reviewsCount: "148 avis vérifiés",
-    instantDeliveryText: "Accès immédiat dès validation",
+    readingTime: "35 à 45 min",
+    instantDeliveryText: "Accès immédiat 24h/24 dès validation",
     format: "Fichier PDF Universel (Téléphone, Tablette, PC, Impression)",
+    commitmentText: "Méthode bienveillante, actionnable & prête à l'emploi",
   },
 
   // Tags SEO
@@ -238,45 +235,45 @@ export const siteConfig = {
     },
   ],
 
-  // Testimonials
-  testimonials: [
+  // Pourquoi ce guide convainc les parents (100% légal & conforme)
+  parentArguments: [
     {
-      id: "t1",
-      name: "Camille M.",
-      role: "Maman de Lucas (3 ans, Petite Section)",
-      avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&auto=format&fit=crop&q=80",
-      rating: 5,
-      date: "Il y a 3 jours",
-      highlight: "Des matins transformés en seulement 48 heures",
-      comment:
-        "Lucas hurlait tous les matins en s'accrochant à mon manteau. J'en pleurais dans la voiture sur le chemin du travail. Ce guide m'a ouvert les yeux sur le bon rituel d'au revoir. En 2 jours, les crises ont cessé et il me fait maintenant un grand coucou avec le sourire !",
-      badge: "Achat vérifié",
+      id: "arg1",
+      icon: "Clock",
+      title: "Pratique & Direct : Moins de 40 min de lecture",
+      subtitle: "Zéro blabla théorique, 100% actionnable",
+      description:
+        "Conçu pour les parents occupés. Vous n'avez pas le temps de lire un pavé de 300 pages : ce guide va droit au but avec des phrases concrètes à dire et des étapes simples à appliquer dès demain matin.",
+      tag: "Efficacité Immédiate",
     },
     {
-      id: "t2",
-      name: "Thomas D.",
-      role: "Papa d'Éléna (2 ans et demi)",
-      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80",
-      rating: 5,
-      date: "Il y a 1 semaine",
-      highlight: "La check-list sur le frigo a tout changé",
-      comment:
-        "Ce guide se lit très vite (moins d'une heure) et va droit au but. Pas de grands discours théoriques : des phrases concrètes, des exemples réels et une check-list géniale. Vraiment rentabilisé dès le premier matin !",
-      badge: "Achat vérifié",
+      id: "arg2",
+      icon: "Heart",
+      title: "Approche Bienveillante & Déculpabilisante",
+      subtitle: "Comprendre les émotions sans jamais brusquer",
+      description:
+        "Découvrez la véritable cause de l'angoisse de séparation. Vous apprendrez à poser un cadre sécurisant et chaleureux, tout en apaisant votre propre anxiété parentale sans aucun sentiment de culpabilité.",
+      tag: "Sécurité Affective",
     },
     {
-      id: "t3",
-      name: "Sophie L.",
-      role: "Maman de Raphaël & Gabriel",
-      avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&auto=format&fit=crop&q=80",
-      rating: 5,
-      date: "Il y a 2 semaines",
-      highlight: "Un concentré de douceur et de bienveillance",
-      comment:
-        "J'avais une boule au ventre à l'idée de laisser mon deuxième fils. Le chapitre sur la culpabilité parentale m'a fait un bien fou. Le petit mot doux dans la poche fonctionne à merveille. Merci infiniment !",
-      badge: "Achat vérifié",
+      id: "arg3",
+      icon: "FileCheck",
+      title: "Boîte à Outils Complète Prête à Imprimer",
+      subtitle: "La Check-list Frigo + Les Cartes Mots Doux",
+      description:
+        "Ne partez plus dans le stress et la précipitation. La check-list visuelle structure le rituel du matin et les cartes de mots doux créent un pont affectif rassurant dans la poche ou le doudou de votre enfant.",
+      tag: "Zéro Charge Mentale",
     },
-  ] as Testimonial[],
+    {
+      id: "arg4",
+      icon: "Sparkles",
+      title: "Des Solutions Concrètes pour Chaque Situation",
+      subtitle: "Petite Section, Crèche, Nounou & Retours de Vacances",
+      description:
+        "Que ce soit pour le tout premier jour ou un blocage apparu après plusieurs semaines, vous disposez de repères clairs, de rituels d'au revoir éprouvés et d'indicateurs précis pour savoir quand consulter.",
+      tag: "Polyvalent & Éprouvé",
+    },
+  ] as ParentArgument[],
 
   // FAQ
   faqs: [

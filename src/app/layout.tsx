@@ -72,13 +72,6 @@ export default function RootLayout({
         name: "AllDigiCraft",
       },
     },
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "4.9",
-      reviewCount: "148",
-      bestRating: "5",
-      worstRating: "1",
-    },
   };
 
   const jsonLdFaq = {

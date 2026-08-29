@@ -21,7 +21,7 @@ export const Header: React.FC = () => {
     { name: "Ce que vous apprendrez", href: "#benefices" },
     { name: "Sommaire (29p.)", href: "#sommaire" },
     { name: "Pour qui ?", href: "#public" },
-    { name: "Avis Parents", href: "#avis" },
+    { name: "Pourquoi ce guide ?", href: "#pourquoi-ce-guide" },
     { name: "FAQ", href: "#faq" },
   ];
 

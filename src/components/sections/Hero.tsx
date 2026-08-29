@@ -25,19 +25,15 @@ export const Hero: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           {/* Left Column: Copywriting & High Conversion Hook */}
           <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
-            {/* Social Proof & Rating Badge */}
+            {/* Reassurance & Value Badge (100% Légal & Conforme) */}
             <div className="inline-flex items-center gap-2 bg-white/90 border border-amber-200/80 shadow-sm px-4 py-1.5 rounded-full backdrop-blur-sm">
-              <div className="flex text-amber-400">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-amber-400" />
-                ))}
-              </div>
+              <Sparkles className="w-4 h-4 text-amber-500" />
               <span className="text-xs font-bold text-stone-800">
-                {siteConfig.trust.ratingScore}
+                Guide Ebook 29 Pages + 2 Bonus Imprimables
               </span>
               <span className="text-stone-300 text-xs">•</span>
-              <span className="text-xs text-stone-600 font-medium">
-                {siteConfig.trust.reviewsCount}
+              <span className="text-xs text-emerald-700 font-bold bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">
+                Format PDF Direct
               </span>
             </div>
 

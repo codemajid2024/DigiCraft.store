@@ -19,7 +19,7 @@ export const TopBanner: React.FC = () => {
             <strong>
               {siteConfig.pricing.amountStr} {siteConfig.pricing.currencySymbol}
             </strong>{" "}
-            au lieu de <span className="line-through opacity-80">19,90 €</span>
+            au lieu de <span className="line-through opacity-80">{siteConfig.pricing.originalPrice} €</span>
           </span>
         </span>
         <span className="hidden md:inline-flex items-center gap-1 text-xs opacity-90 border-l border-white/30 pl-3">
