@@ -10,16 +10,15 @@ export const TopBanner: React.FC = () => {
       <div className="max-w-7xl mx-auto flex items-center justify-center gap-2 sm:gap-4 flex-wrap">
         <span className="inline-flex items-center gap-1.5 bg-black/15 px-2.5 py-0.5 rounded-full text-xs font-semibold backdrop-blur-sm">
           <Zap className="w-3.5 h-3.5 text-yellow-200 fill-yellow-200" />
-          Offre Spéciale Rentrée
+          Pack Complet
         </span>
         <span className="flex items-center gap-1.5">
           <Sparkles className="w-3.5 h-3.5 text-yellow-200 hidden sm:inline" />
           <span>
-            Guide complet + 2 Bonus offerts à seulement{" "}
+            Guide complet de 29 pages + 2 Bonus inclus à{" "}
             <strong>
               {siteConfig.pricing.amountStr} {siteConfig.pricing.currencySymbol}
-            </strong>{" "}
-            au lieu de <span className="line-through opacity-80">{siteConfig.pricing.originalPrice} €</span>
+            </strong>
           </span>
         </span>
         <span className="hidden md:inline-flex items-center gap-1 text-xs opacity-90 border-l border-white/30 pl-3">

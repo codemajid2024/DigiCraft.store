@@ -42,8 +42,6 @@ export const siteConfig = {
     amountStr: "19,90",
     currency: "EUR",
     currencySymbol: "€",
-    originalPrice: "39,90",
-    discountBadge: "-50% PACK COMPLET",
     guaranteeText: "Format PDF numérique sécurisé • Téléchargement immédiat",
   },
 

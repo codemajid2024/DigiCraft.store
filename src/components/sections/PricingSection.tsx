@@ -49,7 +49,7 @@ export const PricingSection: React.FC = () => {
           {/* Top highlight ribbon */}
           <div className="bg-gradient-to-r from-amber-500 via-amber-600 to-warmth-500 text-white text-center py-2.5 px-4 font-bold text-xs sm:text-sm tracking-wide uppercase flex items-center justify-center gap-2">
             <Sparkles className="w-4 h-4 text-yellow-200" />
-            <span>Offre Spéciale Rentrée • Téléchargement Direct Après Paiement</span>
+            <span>Pack Complet Rentrée Maternelle • Téléchargement Immédiat</span>
           </div>
 
           <div className="p-6 sm:p-10 lg:p-12">
@@ -83,16 +83,13 @@ export const PricingSection: React.FC = () => {
                 </div>
 
                 {/* Price Display */}
-                <div className="p-4 rounded-2xl bg-amber-50/80 border border-amber-200/80 flex items-baseline gap-3">
+                <div className="p-4 rounded-2xl bg-amber-50/80 border border-amber-200/80 flex items-baseline justify-between gap-3">
                   <div className="font-display font-black text-4xl sm:text-5xl text-stone-900 tracking-tight">
                     {siteConfig.pricing.amountStr} {siteConfig.pricing.currencySymbol}
                   </div>
-                  <div className="space-y-0.5">
-                    <span className="text-sm font-bold text-stone-400 line-through block">
-                      {siteConfig.pricing.originalPrice} €
-                    </span>
-                    <span className="text-xs font-extrabold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded-full inline-block">
-                      {siteConfig.pricing.discountBadge}
+                  <div className="text-right">
+                    <span className="text-xs font-bold text-amber-900 bg-amber-100 px-3 py-1 rounded-full inline-block border border-amber-200">
+                      TTC • Accès à Vie
                     </span>
                   </div>
                 </div>

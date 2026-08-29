@@ -42,7 +42,7 @@ export const StickyMobileCta: React.FC = () => {
             <span className="text-lg font-black text-stone-900 font-display">
               {siteConfig.pricing.amountStr} {siteConfig.pricing.currencySymbol}
             </span>
-            <span className="text-xs text-stone-400 line-through">{siteConfig.pricing.originalPrice} €</span>
+            <span className="text-[10px] font-semibold text-stone-500">TTC</span>
           </div>
         </div>
 
